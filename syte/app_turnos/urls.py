@@ -9,7 +9,8 @@ urlpatterns = [
 
     #home publica##################
     
-	
+	url(r'^about_turno/(?P<id>\d+)/$', views.about_turno, name="about_turno"),	
+
 
 	
 			

@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Sum
 from django.http import Http404
 from django.contrib.auth.models import User
+from .models import Institucion, Visitante, Turno
 
 #-------------------------------------------------------
 from django.conf import settings
@@ -22,3 +23,9 @@ from django.contrib.auth.decorators import login_required
 #-------------------------------------------------------
 
 # Create your views here.
+def about_turno(request,id):
+    try:
+       turno = Turno.objects.get(id=id)       
+    except Turno.DoesNotExist:
+       turno = None
+    turno = Turno.objects.all().exclude(habilitada=True).order_by("fecha").reverse()

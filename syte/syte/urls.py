@@ -17,7 +17,3 @@ from django.conf.urls import url, include
 from django.contrib import admin
 # from app_campaing import views
 from . import views
-app_name="syte"
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-]
